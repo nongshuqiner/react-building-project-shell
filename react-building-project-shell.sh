@@ -39,14 +39,14 @@ configRequiredDirectories () { # 配置所需目录
   echo "\033[36m 是否使用基本目录结构(Y/n):\033[0m"
   read isUsed
   if [ "$isUsed" == 'Y' -o "$isUsed" == 'y' -o -z "$isUsed" ]; then #
-    cd src && mkdir api components config view router style tools json # 在src下，创建我们需要的文件夹
+    cd src && mkdir api components config views router style tools json # 在src下，创建我们需要的文件夹
     rm -r App.css index.css logo.svg # 删除App.css App.test.js index.css logo.svg等无用文件
     cd api && touch index.js && cd ../ # api => index.js
     cd config && touch index.js && cd ../ # config => index.js
     cd router && touch index.js && cd ../ # router => index.js
     cd style && touch index.scss && cd ../ # style => index.scss
     cd tools && touch index.js && cd ../ # tools => indext.js
-    cd view && touch home.jsx && cd ../ # view => home.jsx
+    cd views && touch home.jsx && cd ../ # views => home.jsx
     touch setupProxy.js
     cat <<EOF >App.js
 import React, { Component } from 'react'
@@ -93,7 +93,7 @@ EOF
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import Home from '../view/home.jsx'
+import Home from '../views/home.jsx'
 
 export default class App extends Component {
   render () {
@@ -108,7 +108,7 @@ export default class App extends Component {
 }
 EOF
 
-    cat <<EOF >view/home.jsx
+    cat <<EOF >views/home.jsx
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom' // 路由相关 props.match 等
 import Axios from '@/api/index.js'
