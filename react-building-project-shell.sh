@@ -25,6 +25,7 @@ installNeedLibrary () { # 安装一些基本的第三方库 和 自定义配置�
   if [ "$isInstall" == 'Y' -o "$isInstall" == 'y' -o -z "$isInstall" ]; then #
     npm i react-router-dom # react 路由器的DOM绑定（必安装）
     npm i node-sass sass-loader axios es6-promise # 使用sass和axios请求方式
+    npm install http-proxy-middleware --save # 配置代理
   fi
 }
 
