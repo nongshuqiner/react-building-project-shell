@@ -1,4 +1,4 @@
-##react-building-project-shell
+## react-building-project-shell
 
 1、这是一个快速搭建react项目的shell文件，他会在根目录下新建一个文件夹`ReactSubject`,并在'~/ReactSubject'下创建一个react项目：
 
@@ -17,6 +17,10 @@ alias: {
   '@': path.join(__dirname, '..', 'src'), // 添加这段内容
 }
 ```
+
+没有配置的话，将会出现如下错误：
+
+![Failed-to-compile.png](./Failed-to-compile.png)
 
 3.运行
 
